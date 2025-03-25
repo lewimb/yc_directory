@@ -1,1 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+
+* {
+  font-family: "Work Sans", sans-serif;
+}
+
+.stripe-background {
+  background: repeating-linear-gradient(
+    to right,
+    #f25a62 0px,
+    /* Stripe color */ #f25a62 2px,
+    /* Stripe width */ transparent 2px,
+    /* Space between stripes */ transparent 40px /* Gap size */
+  );
+}
+
+.slogan::before {
+  content: " ";
+  width: 0;
+  top: 1;
+  left: -2;
+  transform: rotate(-45deg);
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid black;
+  position: absolute;
+}
+
+.slogan::after {
+  content: " ";
+  width: 0;
+  bottom: 1;
+  right: -3;
+  transform: rotate(135deg);
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid black;
+  position: absolute;
+}
+
+#searchbar::placeholder {
+  color: black;
+}

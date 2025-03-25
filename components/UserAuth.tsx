@@ -8,22 +8,24 @@ async function UserAuth() {
   const session = await auth();
 
   return (
-    <ul>
-      {!session?.user ? (
+    <ul className="flex gap-8 items-center">
+      {session?.user ? (
         <>
-          <li>Create</li>
-          <li>
+          <li className="text-xl font-semibold">Create</li>
+          <li className="text-xl font-semibold text-red-500">
             <SignOut />
           </li>
           <li>
             <Image
-              src={!session?.user?.image || user}
+              src={session?.user?.image || user}
               alt={"User avatar"}
-            ></Image>
+              width={36}
+              className="rounded-full"
+            />
           </li>
         </>
       ) : (
-        <li>
+        <li className="text-xl font-semibold">
           <SignIn />
         </li>
       )}

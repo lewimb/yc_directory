@@ -1,11 +1,12 @@
 import Image from "next/image";
 import YCDirectory from "../public/YCDirectory.svg";
 import mark from "../public//Marks.svg";
+import UserAuth from "./UserAuth";
 
-function Navbar() {
+async function Navbar() {
   return (
     <>
-      <nav className="w-screen py-8 px-13 flex items-center justify-between">
+      <nav className="w-screen py-8 px-15 flex items-center justify-between">
         <div className="logo flex">
           <Image src={YCDirectory} alt="Logo" width={160} />
           <Image
@@ -16,10 +17,7 @@ function Navbar() {
           />
         </div>
         <div className="links ">
-          <ul className="flex gap-8">
-            <li className="font-semibold text-xl">Create</li>
-            <li className="font-semibold text-xl text-red-500 ">Logout</li>
-          </ul>
+          <UserAuth />
         </div>
       </nav>
     </>

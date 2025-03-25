@@ -1,11 +1,11 @@
-import { signIn } from "next-auth/react";
+import { signIn } from "@/auth";
 
 function SignIn() {
   return (
     <form
       action={async () => {
         "use server";
-        await signIn("google", { redirectTo: "/" });
+        await signIn("google");
       }}
     >
       <button type="submit">Login</button>
